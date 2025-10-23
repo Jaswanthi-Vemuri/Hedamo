@@ -1,4 +1,3 @@
-// components/ScoreCharts.js
 import { RadialBarChart, RadialBar, Tooltip, BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 
 export default function ScoreCharts({ products }) {

@@ -1,4 +1,3 @@
-// components/ProductTable.js
 import { useEffect, useState } from 'react';
 import { fetchProducts } from '../../utils/fetchProducts';
 const getScoreColor = (score) => {
@@ -32,7 +31,7 @@ export default function ProductTable() {
               <td className={`py-2 px-4 ${getScoreColor(p.score)}`}>{p.score}</td>
               <td className="py-2 px-4">{p.status}</td>
               <td className="py-2 px-4">
-                <button className="text-blue-600 underline" onClick={() => {/* set selected for panel */}}>View</button>
+                <button className="text-blue-600 underline" onClick={() => >View</button>
               </td>
             </tr>
           ))}

@@ -1,36 +1,27 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+Hedamo Product Transparency Dashboard
+A responsive, scalable dashboard for product transparency, built using Next.js (App Router), Tailwind CSS, and React. Designed to help producers showcase their commitment to quality and sustainability, this platform integrates AI-powered scoring and actionable insights.
 
-## Getting Started
+Features
+Responsive Layout: Modern sidebar and top navigation, with seamless support for desktop and mobile devices.
 
-First, run the development server:
+Product Management: Interactive product table with color-coded transparency scores, advanced sorting/filtering, and status indicators.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Product Analytics: Click-through detail panels for each product, with radial progress, AI explanations, suggestions, and severity-coded flags.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Multi-Step Submission: Wizard-style product form with mock AI feedback on review.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Score Visualization: Animated bar chart displays overall transparency scores.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+API Integration: Mock API routes for product data, easily extensible for live backend.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+<img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/fb6167b5-e101-4d74-b814-c40fa8d0aca7" />
+<img width="1910" height="1009" alt="image" src="https://github.com/user-attachments/assets/3c18ba9e-0d30-4b35-b4b6-28ce842cd664" />
+<img width="1895" height="1001" alt="image" src="https://github.com/user-attachments/assets/f61f0f08-9188-47c5-8a5a-0e0f61ef2ca1" />
+<img width="1861" height="990" alt="image" src="https://github.com/user-attachments/assets/6553a75d-0286-493f-aa48-d4505708713a" />
+<img width="1919" height="1010" alt="image" src="https://github.com/user-attachments/assets/9f04d0b8-c265-4ef0-9a95-7c3343608a9e" />
+<img width="1919" height="1009" alt="image" src="https://github.com/user-attachments/assets/32414989-3e7b-4902-8fec-0c1ed70c431a" />
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy live link on Vercel
+https://hedamo-cwwg.vercel.app/

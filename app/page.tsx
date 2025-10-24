@@ -1,16 +1,18 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import Layout from './components/Layout';
-import ProductTable from './components/ProductTable';
-import ProductDetails from './components/ProductDetails';
-import ScoreCharts from './components/ScoreCharts';
-import ProductForm from './components/ProductForm';
-import { fetchProducts } from '../utils/fetchProducts';
+import { useEffect, useState } from "react";
+import Layout from "./components/Layout";
+import ProductTable, { Product } from "./components/ProductTable";
+import ScoreCharts from "./components/ScoreCharts";
+import OverallCircle from "./components/OverallCircle";
+import ProductCompare from "./components/ProductCompare";
+import ProductDetails from "./components/ProductDetails";
+import ProductForm from "./components/ProductForm";
+import { fetchProducts } from "../utils/fetchProducts";
 
 export default function Home() {
-  const [products, setProducts] = useState<any[]>([]);
-  const [selectedProduct, setSelectedProduct] = useState<any | null>(null);
+  const [products, setProducts] = useState<Product[]>([]);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState(true);
   const [aiFeedback, setAiFeedback] = useState<any | null>(null);
 
@@ -27,6 +29,8 @@ export default function Home() {
       {!loading && products.length > 0 && (
         <>
           <ScoreCharts products={products} />
+          <OverallCircle products={products} />
+          <ProductCompare products={products} />
           <ProductTable products={products} onView={setSelectedProduct} />
         </>
       )}
@@ -47,7 +51,6 @@ export default function Home() {
       )}
 
       <ProductForm onFeedback={setAiFeedback} />
-
       {aiFeedback && (
         <div className="p-4 mt-4 bg-blue-50 border border-blue-200 rounded">
           <strong>AI Feedback:</strong> {aiFeedback.explanation}

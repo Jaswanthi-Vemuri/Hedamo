@@ -1,4 +1,11 @@
-export default function ProductDetails({ product, onClose }) {
+import { Product } from "./ProductTable";
+
+type ProductDetailsProps = {
+  product: Product;
+  onClose: () => void;
+};
+
+export default function ProductDetails({ product, onClose }: ProductDetailsProps) {
   return (
     <div className="p-4 bg-white rounded shadow mt-4 max-w-lg">
       <div className="flex items-center mb-2">
@@ -27,7 +34,7 @@ export default function ProductDetails({ product, onClose }) {
               <span
                 key={idx}
                 className={`px-2 py-1 rounded text-xs font-bold ${
-                  f.toLowerCase().includes('unverified') ? 'bg-red-400 text-white' : 'bg-yellow-300'
+                  f.toLowerCase().includes("unverified") ? "bg-red-400 text-white" : "bg-yellow-300"
                 }`}
               >
                 {f}

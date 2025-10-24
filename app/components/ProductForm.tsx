@@ -1,25 +1,33 @@
-import { useState } from 'react';
+import { useState, ChangeEvent, FormEvent } from "react";
+
+type Feedback = {
+  explanation: string;
+  suggestions: string[];
+};
+
+type ProductFormProps = {
+  onFeedback: (feedback: Feedback) => void;
+};
 
 const steps = ["Basic Info", "Ingredients", "Certifications", "Review"];
 
-export default function ProductForm({ onFeedback }) {
+export default function ProductForm({ onFeedback }: ProductFormProps) {
   const [step, setStep] = useState(0);
   const [formData, setFormData] = useState({});
   const [submitted, setSubmitted] = useState(false);
 
-  const feedback = {
+  const feedback: Feedback = {
     explanation: "Moderate transparency. Please review suggested improvements.",
     suggestions: ["Provide more ingredient detail.", "Attach certification proof."]
   };
 
-  const nextStep = () => setStep((s) => s + 1);
-  const prevStep = () => setStep((s) => s - 1);
+  const nextStep = () => setStep(s => s + 1);
+  const prevStep = () => setStep(s => s - 1);
 
-  const handleChange = e => {
+  const handleChange = (e: ChangeEvent<HTMLInputElement>) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
     onFeedback && onFeedback(feedback);
@@ -41,7 +49,7 @@ export default function ProductForm({ onFeedback }) {
     <form onSubmit={handleSubmit} className="bg-white rounded shadow p-6 max-w-lg mx-auto my-8">
       <div className="flex justify-between mb-4">
         {steps.map((label, i) => (
-          <div key={i} className={`font-bold px-2 py-1 rounded ${step === i ? 'bg-blue-100' : 'bg-gray-50'}`}>
+          <div key={i} className={`font-bold px-2 py-1 rounded ${step === i ? "bg-blue-100" : "bg-gray-50"}`}>
             {label}
           </div>
         ))}
